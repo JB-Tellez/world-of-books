@@ -50,4 +50,8 @@
 	a {
 		color: #42b983;
 	}
+
+	img {
+		max-width: 128px;
+	}
 </style>
