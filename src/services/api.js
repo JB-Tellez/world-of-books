@@ -12,5 +12,8 @@ export default {
   },
   addBook(book) {
     return axios.post(`${URL}/books`, book)
+  },
+  deleteBook(book) {
+    return axios.delete(`${URL}/books/${book.book_id}`)
   }
 }

@@ -4,6 +4,7 @@
     <p>Title: {{book.title}}</p>
     <p>Author: {{book.author}}</p>
     <img :src="book.image_url">
+    <button @click="deleteBook">x</button>
   </div>
 </template>
 
@@ -18,10 +19,17 @@ export default {
   created() {
     api.getBook(this.$route.params.id)
       .then( result => this.book = result)
+  },
+  methods: {
+    deleteBook() {
+      api.deleteBook(this.book)
+        .then(result => console.log(result))
+        .catch(err => console.error(err))
+    }
   }
 }
 </script>
 
-<style>
+<style scoped>
 
 </style>
