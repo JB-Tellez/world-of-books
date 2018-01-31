@@ -23,7 +23,7 @@ export default {
   methods: {
     deleteBook() {
       api.deleteBook(this.book)
-        .then(result => console.log(result))
+        .then(result => this.$router.push('/'))
         .catch(err => console.error(err))
     }
   }
